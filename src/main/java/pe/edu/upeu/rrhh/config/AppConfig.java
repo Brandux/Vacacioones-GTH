@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.edu.upeu.mavenspring.config;
+package pe.edu.upeu.rrhh.config;
 
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
@@ -17,14 +17,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
-import pe.edu.upeu.mavenspring.dao.UsuarioDAO;
+
 
 /**
  *
  * @author UPEU
  */
 @Configuration
-@ComponentScan(basePackages="pe.edu.upeu.mavenspring")
+@ComponentScan(basePackages="pe.edu.upeu.rrhh")
 @EnableWebMvc
 public class AppConfig extends WebMvcConfigurerAdapter{
    @Bean
@@ -45,27 +45,19 @@ public class AppConfig extends WebMvcConfigurerAdapter{
         @Bean
 	public static DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
-		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-		dataSource.setUsername("GrupoPrestamo");
-		dataSource.setPassword("grupoprestamo");
+		dataSource.setDriverClassName("oracle.jdbc.OracleDriver");//driver-conexion//
+		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");//url-conexion//
+		dataSource.setUsername("GrupoPrestamo");//user-conexion//
+		dataSource.setPassword("grupoprestamo");//pass-conexion//
 		return dataSource;
 	}
-        @Bean
-        public UsuarioDAO geUsuarioDAO()
-        {
-            return new UsuarioDAO(getDataSource());
-        }
-        
-       
 //        @Bean
-//	public PrestamoDAO getPrestamoDAO() {
-//		return new PrestamoDAO(getDataSource());
-//	}
 //        
-//        @Bean
-//	public ReservaDAO getReservaDAO() {
-//		return new ReservaDAO(getDataSource());
-//	}
-
+//        //EXAMPLE---
+//        public UsuarioDAO geUsuarioDAO()
+//        {
+//            return new UsuarioDAO(getDataSource());
+//        }
+//        
+    
 }

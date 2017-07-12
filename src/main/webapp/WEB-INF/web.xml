@@ -21,7 +21,7 @@
         </init-param>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>pe.edu.upeu.mavenspring</param-value>
+            <param-value>pe.edu.upeu.rrhh</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

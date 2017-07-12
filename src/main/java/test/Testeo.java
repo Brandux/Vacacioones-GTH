@@ -5,6 +5,9 @@
  */
 package test;
 
+import javax.sql.DataSource;
+import pe.edu.upeu.rrhh.config.AppConfig;
+
 /**
  *
  * @author Alfa003
@@ -15,7 +18,15 @@ public class Testeo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-                System.out.println("hora");
+                Conex();
         }
-    
+    public static void Conex() {
+        DataSource as = AppConfig.getDataSource();
+        if (as != null) {
+            System.out.println("si");
+        } else {
+            System.out.println("no");
+        }
+
+    }
 }
